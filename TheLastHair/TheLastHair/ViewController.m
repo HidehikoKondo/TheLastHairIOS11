@@ -15,6 +15,8 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
 // 広告
 @property (weak, nonatomic) IBOutlet UIView *adView;
 @property(nonatomic, weak) IBOutlet GADBannerView *bannerView;
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView2;
+
 @end
 
 @implementation ViewController
@@ -27,6 +29,10 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
     self.bannerView.adUnitID = kBannerAdUnitID;
     self.bannerView.rootViewController = self;
     [self.bannerView loadRequest:[GADRequest request]];
+    
+    self.bannerView2.adUnitID = kBannerAdUnitID;
+    self.bannerView2.rootViewController = self;
+    [self.bannerView2 loadRequest:[GADRequest request]];
 }
 
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,32 +16,99 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ze9-ba-Ff0" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
-                                <color key="backgroundColor" red="0.47405957310000002" green="0.97915317359999998" blue="0.65222068919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="OoM-7k-VUp"/>
                                     <constraint firstAttribute="height" constant="50" id="hNb-nz-3mm"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="ODn-xs-C6F"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-nr-P0I">
+                                <rect key="frame" x="7" y="163" width="306.5" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aKK-nr-P0I" secondAttribute="height" multiplier="307:67" id="dyO-aR-trD"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-JP-FCJ" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="75g-5C-s6E"/>
+                                    <constraint firstAttribute="height" constant="50" id="SaC-PB-ZaZ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-8S-1t9">
+                                <rect key="frame" x="86.5" y="309" width="147" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fBf-8S-1t9" secondAttribute="height" multiplier="49:15" id="67n-Xw-yGz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="startbutton"/>
+                                <connections>
+                                    <segue destination="Fi7-1u-LKv" kind="presentation" modalTransitionStyle="crossDissolve" id="hXB-oK-3zJ"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-Jp-sf2">
+                                <rect key="frame" x="53" y="363" width="214" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eYf-Jp-sf2" secondAttribute="height" multiplier="107:26" id="Jy4-4a-vaw"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="rankbutton"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.47405957310000002" green="0.97915317359999998" blue="0.65222068919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aKK-nr-P0I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6.5" id="0H8-KF-xUG"/>
+                            <constraint firstItem="JVq-JP-FCJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4qV-Gh-XSN"/>
+                            <constraint firstItem="eYf-Jp-sf2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5n7-ID-7Ce"/>
+                            <constraint firstItem="eYf-Jp-sf2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="EtJ-z0-pmZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKK-nr-P0I" secondAttribute="trailing" constant="6.5" id="HbC-qa-Mm9"/>
                             <constraint firstItem="ze9-ba-Ff0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QFJ-Xv-uxI"/>
+                            <constraint firstItem="fBf-8S-1t9" firstAttribute="top" secondItem="aKK-nr-P0I" secondAttribute="bottom" constant="79" id="U3F-s1-Z7c"/>
                             <constraint firstItem="ze9-ba-Ff0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="U8G-jq-l5u"/>
+                            <constraint firstItem="fBf-8S-1t9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yho-dd-aXT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fBf-8S-1t9" secondAttribute="trailing" constant="86.5" id="eMd-G0-Nao"/>
+                            <constraint firstItem="aKK-nr-P0I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jsW-xh-lSl"/>
+                            <constraint firstItem="aKK-nr-P0I" firstAttribute="top" secondItem="ze9-ba-Ff0" secondAttribute="bottom" constant="93" id="le6-RJ-QHV"/>
+                            <constraint firstItem="fBf-8S-1t9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86.5" id="mSR-LX-21B"/>
+                            <constraint firstItem="eYf-Jp-sf2" firstAttribute="top" secondItem="fBf-8S-1t9" secondAttribute="bottom" constant="9" id="neh-OZ-M2F"/>
+                            <constraint firstItem="JVq-JP-FCJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oFO-Ys-JQL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eYf-Jp-sf2" secondAttribute="trailing" constant="53" id="tHY-Ci-1Zp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="ze9-ba-Ff0" id="ll7-KG-vEa"/>
+                        <outlet property="bannerView2" destination="JVq-JP-FCJ" id="ioI-71-5mg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="95.625" y="23.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xnp-7D-paH">
+            <objects>
+                <viewController id="Fi7-1u-LKv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7xA-V1-rRN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.51040123049999997" green="0.95996523239999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="RmE-yS-Myh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kn-Rn-4Fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831" y="23"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rankbutton" width="214" height="52"/>
+        <image name="startbutton" width="147" height="45"/>
+        <image name="title" width="307" height="67"/>
+    </resources>
 </document>

@@ -18,6 +18,7 @@
 		069B5A771FFBECC1009EA601 /* gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 069B5A701FFBECC0009EA601 /* gameover.mp3 */; };
 		069B5A781FFBECC1009EA601 /* ok.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 069B5A711FFBECC0009EA601 /* ok.mp3 */; };
 		069B5A791FFBECC1009EA601 /* unplug.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 069B5A721FFBECC1009EA601 /* unplug.mp3 */; };
+		069B5A7B1FFC0814009EA601 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069B5A7A1FFC0814009EA601 /* GameKit.framework */; };
 		06B80F261FFBC5A10071D1FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B80F251FFBC5A10071D1FC /* AppDelegate.m */; };
 		06B80F291FFBC5A10071D1FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B80F281FFBC5A10071D1FC /* ViewController.m */; };
 		06B80F2C1FFBC5A10071D1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B80F2A1FFBC5A10071D1FC /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		069B5A701FFBECC0009EA601 /* gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameover.mp3; sourceTree = "<group>"; };
 		069B5A711FFBECC0009EA601 /* ok.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ok.mp3; sourceTree = "<group>"; };
 		069B5A721FFBECC1009EA601 /* unplug.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = unplug.mp3; sourceTree = "<group>"; };
+		069B5A7A1FFC0814009EA601 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		06B80F211FFBC5A10071D1FC /* TheLastHair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLastHair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B80F241FFBC5A10071D1FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		06B80F251FFBC5A10071D1FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				069B5A681FFBEBDE009EA601 /* AVFoundation.framework in Frameworks */,
 				069B5A661FFBEBC9009EA601 /* AudioToolbox.framework in Frameworks */,
 				D9AE67AAE72B22A009255BC3 /* libPods-TheLastHair.a in Frameworks */,
+				069B5A7B1FFC0814009EA601 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +127,7 @@
 		0B02DDE6F3387EE62B3F8C8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				069B5A7A1FFC0814009EA601 /* GameKit.framework */,
 				069B5A671FFBEBDE009EA601 /* AVFoundation.framework */,
 				069B5A651FFBEBC9009EA601 /* AudioToolbox.framework */,
 				F997583EA31E0D66A2D5C421 /* libPods-TheLastHair.a */,
@@ -174,7 +178,12 @@
 				TargetAttributes = {
 					06B80F201FFBC5A10071D1FC = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -411,12 +420,15 @@
 			baseConfigurationReference = E739BBC07A4D053B2BB80ABC /* Pods-TheLastHair.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
 				INFOPLIST_FILE = TheLastHair/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.NamiheiHair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b5c9a31f-22bb-4e48-b982-a545b3a66338";
+				PROVISIONING_PROFILE_SPECIFIER = NamiheiHairDevPushNotification;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -426,12 +438,15 @@
 			baseConfigurationReference = F2BE9F7085119E5C943FD29D /* Pods-TheLastHair.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
 				INFOPLIST_FILE = TheLastHair/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.NamiheiHair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b5c9a31f-22bb-4e48-b982-a545b3a66338";
+				PROVISIONING_PROFILE_SPECIFIER = NamiheiHairDevPushNotification;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

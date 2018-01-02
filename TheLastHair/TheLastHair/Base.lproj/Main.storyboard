@@ -52,12 +52,15 @@
                                     <segue destination="Fi7-1u-LKv" kind="presentation" modalTransitionStyle="crossDissolve" id="hXB-oK-3zJ"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-Jp-sf2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-Jp-sf2">
                                 <rect key="frame" x="53" y="412" width="308" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eYf-Jp-sf2" secondAttribute="height" multiplier="107:26" id="Jy4-4a-vaw"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="rankbutton"/>
+                                <connections>
+                                    <action selector="showBord" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdN-BC-pid"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47405957310000002" green="0.97915317359999998" blue="0.65222068919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -282,7 +282,7 @@
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
 				INFOPLIST_FILE = TheLastHair/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.NamiheiHair.TheLastHair;
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.NamiheiHair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -296,7 +296,7 @@
 				DEVELOPMENT_TEAM = 7JKB5AMAKP;
 				INFOPLIST_FILE = TheLastHair/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.NamiheiHair.TheLastHair;
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.NamiheiHair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

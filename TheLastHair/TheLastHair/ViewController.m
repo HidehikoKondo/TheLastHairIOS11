@@ -7,10 +7,14 @@
 //
 
 #import "ViewController.h"
+@import GoogleMobileAds;
+static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/9650414539";
 
-@interface ViewController ()
+@interface ViewController ()<GADInterstitialDelegate>
+
+// 広告
 @property (weak, nonatomic) IBOutlet UIView *adView;
-
+@property(nonatomic, weak) IBOutlet GADBannerView *bannerView;
 @end
 
 @implementation ViewController
@@ -18,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //バナー
+    self.bannerView.adUnitID = kBannerAdUnitID;
+    self.bannerView.rootViewController = self;
+    [self.bannerView loadRequest:[GADRequest request]];
 }
 
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>824449143952-vobpie5e943kcdqn90mivluh61ic188k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.824449143952-vobpie5e943kcdqn90mivluh61ic188k</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>824449143952-tqh6j8c98b4uoj6b201fja92una2s85s.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC4nzZlv7EBUE9ItrZidorSLJMvIXT3YVE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>824449143952</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>net.udonko.NamiheiHair</string>
+	<key>PROJECT_ID</key>
+	<string>udonkonet-4deef</string>
+	<key>STORAGE_BUCKET</key>
+	<string>udonkonet-4deef.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:824449143952:ios:a93cfdc35b29fb65</string>
+	<key>DATABASE_URL</key>
+	<string>https://udonkonet-4deef.firebaseio.com</string>
+</dict>
+</plist>

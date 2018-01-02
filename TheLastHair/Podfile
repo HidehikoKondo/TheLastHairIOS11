@@ -8,5 +8,6 @@ target 'TheLastHair' do
   # Pods for TheLastHair
 
 pod 'Firebase/Core'
+pod 'Firebase/AdMob'
 
 end

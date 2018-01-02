@@ -13,6 +13,7 @@
 		06B80F2E1FFBC5A10071D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B80F2D1FFBC5A10071D1FC /* Assets.xcassets */; };
 		06B80F311FFBC5A10071D1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B80F2F1FFBC5A10071D1FC /* LaunchScreen.storyboard */; };
 		06B80F341FFBC5A10071D1FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B80F331FFBC5A10071D1FC /* main.m */; };
+		D9AE67AAE72B22A009255BC3 /* libPods-TheLastHair.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F997583EA31E0D66A2D5C421 /* libPods-TheLastHair.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		06B80F301FFBC5A10071D1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06B80F321FFBC5A10071D1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06B80F331FFBC5A10071D1FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E739BBC07A4D053B2BB80ABC /* Pods-TheLastHair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheLastHair.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheLastHair/Pods-TheLastHair.debug.xcconfig"; sourceTree = "<group>"; };
+		F2BE9F7085119E5C943FD29D /* Pods-TheLastHair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheLastHair.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheLastHair/Pods-TheLastHair.release.xcconfig"; sourceTree = "<group>"; };
+		F997583EA31E0D66A2D5C421 /* libPods-TheLastHair.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheLastHair.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AE67AAE72B22A009255BC3 /* libPods-TheLastHair.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				06B80F231FFBC5A10071D1FC /* TheLastHair */,
 				06B80F221FFBC5A10071D1FC /* Products */,
+				CEC2D0A835AD138A6D73E4E5 /* Pods */,
+				0B02DDE6F3387EE62B3F8C8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = TheLastHair;
 			sourceTree = "<group>";
 		};
+		0B02DDE6F3387EE62B3F8C8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F997583EA31E0D66A2D5C421 /* libPods-TheLastHair.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEC2D0A835AD138A6D73E4E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E739BBC07A4D053B2BB80ABC /* Pods-TheLastHair.debug.xcconfig */,
+				F2BE9F7085119E5C943FD29D /* Pods-TheLastHair.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06B80F371FFBC5A10071D1FC /* Build configuration list for PBXNativeTarget "TheLastHair" */;
 			buildPhases = (
+				DD1F8907D319C3510A4F0B78 /* [CP] Check Pods Manifest.lock */,
 				06B80F1D1FFBC5A10071D1FC /* Sources */,
 				06B80F1E1FFBC5A10071D1FC /* Frameworks */,
 				06B80F1F1FFBC5A10071D1FC /* Resources */,
+				BADB77C6D4836DB2AAB51F07 /* [CP] Embed Pods Frameworks */,
+				97C1C1D3053793C3B45BB8B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		97C1C1D3053793C3B45BB8B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheLastHair/Pods-TheLastHair-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BADB77C6D4836DB2AAB51F07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheLastHair/Pods-TheLastHair-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD1F8907D319C3510A4F0B78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheLastHair-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06B80F1D1FFBC5A10071D1FC /* Sources */ = {
@@ -276,6 +354,7 @@
 		};
 		06B80F381FFBC5A10071D1FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E739BBC07A4D053B2BB80ABC /* Pods-TheLastHair.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -284,12 +363,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.NamiheiHair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		06B80F391FFBC5A10071D1FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2BE9F7085119E5C943FD29D /* Pods-TheLastHair.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,7 +378,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.NamiheiHair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

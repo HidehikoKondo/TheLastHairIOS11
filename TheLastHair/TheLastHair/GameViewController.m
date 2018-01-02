@@ -48,6 +48,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nowScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *unplugLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *umiheiComboImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *namihei;
 
 @end
 
@@ -110,15 +111,13 @@
     [super touchesBegan:touches withEvent:event];
     NSLog(@"タップ開始 %f, %f  タップ数：%d",location.x, location.y, taps);
     
-    //指を表示
-    if(gameoverFlg == 0){
-        self.fingerImageView.hidden = NO;
-    }
+
 }
 
 
 //ドラッグ中に繰り返し発生
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
     //ゲームオーバーじゃないときだけタッチイベントが有効
     if( gameoverFlg ==0){
         
@@ -143,24 +142,39 @@
         //毛を引っ張ります
         NSLog(@"指の動き：%f , %f から %f, %f", oldLocation.x, oldLocation.y, newLocation.x, newLocation.y);
         
+        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+
+        
         //ドラッグした位置をもとに、指のY座標を変更
-        [self.fingerImageView setCenter:CGPointMake(214, self.hairImageView.frame.origin.y + (-1)*(90+oldLocation.y-newLocation.y))];
+        [self.fingerImageView setCenter:CGPointMake(screenSize.width * 0.5 + self.fingerImageView.frame.size.width * 0.3,
+                                                    self.hairImageView.frame.origin.y + (-1)*(90+oldLocation.y-newLocation.y) + 10)];
+        
+        //指を表示
+        if(gameoverFlg == 0){
+            self.fingerImageView.hidden = NO;
+        }
         
         //ドラッグした位置をもとに、画像の高さとY座標を変更（伸び縮み）
-        [self.hairImageView setFrame:CGRectMake(self.hairImageView.frame.origin.x,
+        [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5 ,
                                            self.hairImageView.frame.origin.y + (-1)*(oldLocation.y-newLocation.y),
                                            self.hairImageView.frame.size.width,
                                            self.hairImageView.frame.size.height + (oldLocation.y-newLocation.y))];
         
         //毛が縮みます　高さが２０以下、Y座標が200以上、抜けてない時は高さとY座標を固定する（縮みすぎないようにする）
         if(self.hairImageView.frame.size.height <=20 && self.hairImageView.frame.origin.y >=200 && nuitaFlg == 0){
-            [self.hairImageView setFrame:CGRectMake(self.hairImageView.frame.origin.x,220,self.hairImageView.frame.size.width,20)];
+            [self.hairImageView setFrame:CGRectMake(self.hairImageView.frame.origin.x,
+                                                    self.namihei.frame.origin.y + 20,
+                                                    self.hairImageView.frame.size.width,
+                                                    20)];
         }
         
         
         //毛が抜けます　Y座標が40以下になった、または抜いた後は毛の高さを70に固定（のばしていた画像を一定の大きさに固定する事によって抜けたように見せる）
         if(self.hairImageView.frame.origin.y <=50 || nuitaFlg == 1){
-            [self.hairImageView setFrame:CGRectMake(self.hairImageView.frame.origin.x,self.hairImageView.frame.origin.y,self.hairImageView.frame.size.width,70)];
+            [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5,
+                                                    self.hairImageView.frame.origin.y,
+                                                    self.hairImageView.frame.size.width,
+                                                    100)];
             NSLog(@"100以下だよ");
             nuitaFlg = 1;
             
@@ -220,11 +234,12 @@
 
 //タッチイベント終了時の処理
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+
     
     //指を非表示
     self.fingerImageView.hidden = YES;
-    [self.fingerImageView setCenter:CGPointMake(214,88)];
+//    [self.fingerImageView setCenter:CGPointMake(214,88)];
     
     //ゲームオーバーじゃないときだけ実行
     if(gameoverFlg == 0){
@@ -250,22 +265,35 @@
             }
             
             //アニメーション ニョキッと生えてきます
-            [self.hairImageView setFrame:CGRectMake(145, 230, 25, 10)];
+            [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5 ,
+                                                    self.namihei.frame.origin.y + 20,
+                                                    25,
+                                                    10)];
             [UIView beginAnimations:nil context:nil];
             [UIView setAnimationDuration:0.4];
-            [self.hairImageView setFrame:CGRectMake(145, 180, 25, 60)];
+            [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5,
+                                                    self.namihei.frame.origin.y - 30,
+                                                    25,
+                                                    60)];
             [UIView commitAnimations];
         }else{
             //失敗再生
             [self playSound:@"unplug"];
             
             //アニメーション 上下にふわふわ動きます。
-            [self.hairImageView setFrame:CGRectMake(145, 200, 25, 40)];
+            
+            [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5,
+                                                    self.namihei.frame.origin.y,
+                                                    25,
+                                                    40)];
             [UIView beginAnimations:nil context:nil];
             [UIView setAnimationDuration:0.07];
             [UIView setAnimationRepeatCount:4];
             [UIView setAnimationRepeatAutoreverses:YES];
-            [self.hairImageView setFrame:CGRectMake(145, 180, 25, 60)];
+            [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5,
+                                                    self.namihei.frame.origin.y - 20,
+                                                    25,
+                                                    60)];
             [UIView commitAnimations];
         }
         //抜いたフラグをたてる

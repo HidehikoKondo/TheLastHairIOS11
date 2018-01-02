@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ze9-ba-Ff0" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                <rect key="frame" x="47" y="20" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="OoM-7k-VUp"/>
@@ -29,13 +29,13 @@
                                 <viewLayoutGuide key="safeArea" id="ODn-xs-C6F"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-nr-P0I">
-                                <rect key="frame" x="7" y="163" width="306.5" height="67"/>
+                                <rect key="frame" x="7" y="163" width="400.66666666666669" height="87.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aKK-nr-P0I" secondAttribute="height" multiplier="307:67" id="dyO-aR-trD"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-JP-FCJ" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <rect key="frame" x="47" y="686" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="75g-5C-s6E"/>
@@ -43,7 +43,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-8S-1t9">
-                                <rect key="frame" x="86.5" y="309" width="147" height="45"/>
+                                <rect key="frame" x="86.666666666666686" y="329.33333333333331" width="241" height="73.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fBf-8S-1t9" secondAttribute="height" multiplier="49:15" id="67n-Xw-yGz"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-Jp-sf2">
-                                <rect key="frame" x="53" y="363" width="214" height="52"/>
+                                <rect key="frame" x="53" y="412" width="308" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eYf-Jp-sf2" secondAttribute="height" multiplier="107:26" id="Jy4-4a-vaw"/>
                                 </constraints>
@@ -95,24 +95,24 @@
             <objects>
                 <viewController id="Fi7-1u-LKv" customClass="GameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7xA-V1-rRN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="namiheiHead4inch" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-dd-UxY" customClass="Ga">
-                                <rect key="frame" x="22" y="139.5" width="277" height="340.5"/>
+                                <rect key="frame" x="22" y="280" width="371" height="456"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="j4u-dd-UxY" secondAttribute="height" multiplier="277:341" id="9zr-ot-BoA"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hair" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-Bh-5bq">
-                                <rect key="frame" x="148" y="59.5" width="25" height="100"/>
+                                <rect key="frame" x="199.66666666666666" y="234" width="16" height="66"/>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="finger" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-cA-A6B">
                                 <rect key="frame" x="92" y="-90" width="298" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-zW-S2P" userLabel="ゲームオーバー">
-                                <rect key="frame" x="0.0" y="371" width="320" height="109"/>
+                                <rect key="frame" x="47" y="627" width="320" height="109"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="ハイスコア：0本抜き" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6d-Ti-SRg">
                                         <rect key="frame" x="10" y="0.0" width="295" height="40"/>
@@ -155,7 +155,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-ur-hhI">
-                                <rect key="frame" x="20" y="80" width="280" height="44"/>
+                                <rect key="frame" x="20" y="80" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="mou-mt-4ww"/>
                                 </constraints>
@@ -164,7 +164,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="umiheicombo" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-Rk-897">
-                                <rect key="frame" x="3" y="206" width="314" height="68"/>
+                                <rect key="frame" x="50" y="334" width="314" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -189,8 +189,8 @@
                         <outlet property="gameOverView" destination="1dB-zW-S2P" id="Sme-xy-Bqh"/>
                         <outlet property="hairImageView" destination="m8a-Bh-5bq" id="3JY-d4-E8K"/>
                         <outlet property="highScoreLabel" destination="O6d-Ti-SRg" id="0Vj-wD-sgn"/>
+                        <outlet property="namihei" destination="j4u-dd-UxY" id="UWm-TV-KxN"/>
                         <outlet property="nowScoreLabel" destination="KVU-me-SBY" id="uUO-yi-Dna"/>
-                        <outlet property="umiheiComboImageView" destination="aD5-Rk-897" id="n1x-6L-411"/>
                         <outlet property="unplugLabel" destination="FvN-ur-hhI" id="1ch-Q5-ZAO"/>
                     </connections>
                 </viewController>
@@ -200,13 +200,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="endbutton" width="72" height="27"/>
-        <image name="finger" width="198" height="180"/>
-        <image name="hair" width="25" height="100"/>
-        <image name="namiheiHead4inch" width="277" height="341"/>
-        <image name="rankbutton" width="214" height="52"/>
-        <image name="startbutton" width="147" height="45"/>
-        <image name="title" width="307" height="67"/>
-        <image name="umiheicombo" width="314" height="68"/>
+        <image name="endbutton" width="48" height="18"/>
+        <image name="finger" width="132" height="120"/>
+        <image name="hair" width="16" height="66"/>
+        <image name="namiheiHead4inch" width="184" height="227"/>
+        <image name="rankbutton" width="142" height="35"/>
+        <image name="startbutton" width="98" height="30"/>
+        <image name="title" width="204" height="45"/>
+        <image name="umiheicombo" width="209" height="45"/>
     </resources>
 </document>

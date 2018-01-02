@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		069B5A611FFBD763009EA601 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 069B5A601FFBD762009EA601 /* GoogleService-Info.plist */; };
+		069B5A641FFBE88B009EA601 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069B5A631FFBE88B009EA601 /* GameViewController.m */; };
 		06B80F261FFBC5A10071D1FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B80F251FFBC5A10071D1FC /* AppDelegate.m */; };
 		06B80F291FFBC5A10071D1FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B80F281FFBC5A10071D1FC /* ViewController.m */; };
 		06B80F2C1FFBC5A10071D1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B80F2A1FFBC5A10071D1FC /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		069B5A601FFBD762009EA601 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		069B5A621FFBE88B009EA601 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		069B5A631FFBE88B009EA601 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		06B80F211FFBC5A10071D1FC /* TheLastHair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLastHair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B80F241FFBC5A10071D1FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		06B80F251FFBC5A10071D1FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				06B80F281FFBC5A10071D1FC /* ViewController.m */,
 				06B80F2A1FFBC5A10071D1FC /* Main.storyboard */,
 				06B80F2D1FFBC5A10071D1FC /* Assets.xcassets */,
+				069B5A621FFBE88B009EA601 /* GameViewController.h */,
+				069B5A631FFBE88B009EA601 /* GameViewController.m */,
 				06B80F2F1FFBC5A10071D1FC /* LaunchScreen.storyboard */,
 				06B80F321FFBC5A10071D1FC /* Info.plist */,
 				069B5A601FFBD762009EA601 /* GoogleService-Info.plist */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069B5A641FFBE88B009EA601 /* GameViewController.m in Sources */,
 				06B80F291FFBC5A10071D1FC /* ViewController.m in Sources */,
 				06B80F341FFBC5A10071D1FC /* main.m in Sources */,
 				06B80F261FFBC5A10071D1FC /* AppDelegate.m in Sources */,

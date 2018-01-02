@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,7 +16,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ze9-ba-Ff0" customClass="GADBannerView">
@@ -35,7 +35,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-JP-FCJ" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="75g-5C-s6E"/>
@@ -95,18 +95,44 @@
             <objects>
                 <viewController id="Fi7-1u-LKv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7xA-V1-rRN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="namiheiHead4inch" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-dd-UxY">
+                                <rect key="frame" x="22" y="139.5" width="277" height="340.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="j4u-dd-UxY" secondAttribute="height" multiplier="277:341" id="9zr-ot-BoA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hair" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-Bh-5bq">
+                                <rect key="frame" x="148" y="59.5" width="25" height="100"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="finger" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-cA-A6B">
+                                <rect key="frame" x="92" y="-90" width="298" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.51040123049999997" green="0.95996523239999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j4u-dd-UxY" firstAttribute="centerX" secondItem="7xA-V1-rRN" secondAttribute="centerX" id="7mX-tZ-TqC"/>
+                            <constraint firstItem="RmE-yS-Myh" firstAttribute="trailing" secondItem="j4u-dd-UxY" secondAttribute="trailing" constant="21" id="9rx-PU-aMF"/>
+                            <constraint firstItem="j4u-dd-UxY" firstAttribute="leading" secondItem="RmE-yS-Myh" secondAttribute="leading" constant="22" id="Apy-zi-MiW"/>
+                            <constraint firstItem="j4u-dd-UxY" firstAttribute="bottom" secondItem="RmE-yS-Myh" secondAttribute="bottom" id="d3O-LP-Vbt"/>
+                            <constraint firstItem="m8a-Bh-5bq" firstAttribute="centerX" secondItem="j4u-dd-UxY" secondAttribute="centerX" id="peF-Eg-o2D"/>
+                            <constraint firstItem="j4u-dd-UxY" firstAttribute="top" secondItem="m8a-Bh-5bq" secondAttribute="bottom" constant="-20" id="vs0-ce-8KI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RmE-yS-Myh"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kn-Rn-4Fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="23"/>
+            <point key="canvasLocation" x="828.75" y="20"/>
         </scene>
     </scenes>
     <resources>
+        <image name="finger" width="198" height="180"/>
+        <image name="hair" width="25" height="100"/>
+        <image name="namiheiHead4inch" width="277" height="341"/>
         <image name="rankbutton" width="214" height="52"/>
         <image name="startbutton" width="147" height="45"/>
         <image name="title" width="307" height="67"/>

@@ -108,11 +108,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hair" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-Bh-5bq">
-                                <rect key="frame" x="199.66666666666666" y="234" width="16" height="66"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="finger" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-cA-A6B">
-                                <rect key="frame" x="92" y="-90" width="298" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="200" y="234" width="16" height="66"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-zW-S2P" userLabel="ゲームオーバー">
                                 <rect key="frame" x="47" y="627" width="320" height="109"/>
@@ -169,6 +165,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="umiheicombo" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-Rk-897">
                                 <rect key="frame" x="50" y="334" width="314" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="finger" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-cA-A6B">
+                                <rect key="frame" x="137" y="46" width="298" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="Dd5-qd-XKt"/>
+                                    <constraint firstAttribute="height" constant="180" id="htN-XG-P9z"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.51040123049999997" green="0.95996523239999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

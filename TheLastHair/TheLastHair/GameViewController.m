@@ -15,7 +15,7 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
 
 #define MAXHAIR     999999999  //最大値制限
 #define ANGRY       250         //怒られる確率
-#define COMBO       100         //海平コンボの確率
+#define COMBO       2         //海平コンボの確率
 #define REVIEW      50          //レビューしろアラートを表示するプレイ回数
 
 @interface GameViewController ()<GADInterstitialDelegate>{

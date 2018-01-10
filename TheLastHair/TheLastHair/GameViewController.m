@@ -33,6 +33,9 @@
     float hairY;
     bool isAnimating;
     
+    CGSize screenSize;
+
+    
 }
 //@property (weak, nonatomic) IBOutlet UIImageView *hairImageView;
 //@property (weak, nonatomic) IBOutlet UILabel *unplugLabel;
@@ -61,8 +64,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
     
-    // Do any additional setup after loading the view.
+    screenSize = [[UIScreen mainScreen] bounds].size;
+
     //ゲームオーバー画面の角丸設定
     self.gameOverView.layer.cornerRadius = 10;
     
@@ -106,7 +111,7 @@
     [super viewDidLayoutSubviews];
     
     //髪の初期位置とサイズ
-    self.hairImageView.frame = CGRectMake(self.hairImageView.frame.origin.x,
+    self.hairImageView.frame = CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
                                           self.namihei.frame.origin.y - 30,
                                           self.hairImageView.frame.size.width,
                                           50);
@@ -140,7 +145,6 @@
 //ドラッグ中に繰り返し発生
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesMoved:touches withEvent:event];
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
 
     
     if( gameoverFlg ==0){
@@ -171,19 +175,19 @@
         
         if(nuitaFlg == 1){
             //抜いたときは毛の高さ固定
-            self.hairImageView.frame = CGRectMake(self.hairImageView.frame.origin.x,
+            self.hairImageView.frame = CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
                                                   (self.namihei.frame.origin.y + 30) - height - 10 ,
                                                   self.hairImageView.frame.size.width,
                                                   100);
         }else{
             //抜けてないときは毛の高さは可変
-            self.hairImageView.frame = CGRectMake(self.hairImageView.frame.origin.x,
+            self.hairImageView.frame = CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
                                                   (self.namihei.frame.origin.y + 30) - height - 10 ,
                                                   self.hairImageView.frame.size.width,
                                                   height);
         }
         //指の動き
-        self.fingerImageView.frame = CGRectMake(self.hairImageView.frame.origin.x - self.fingerImageView.frame.size.width * 0.2,
+        self.fingerImageView.frame = CGRectMake((screenSize.width * 0.5) - (self.fingerImageView.frame.size.width * 0.5),
                                                 self.hairImageView.frame.origin.y - self.fingerImageView.frame.size.height + 20,
                                                 self.fingerImageView.frame.size.width,
                                                 self.fingerImageView.frame.size.height);
@@ -193,10 +197,10 @@
 #pragma mark- 毛が抜ける処理
     //毛が抜けます　Y座標が40以下になった、または抜いた後は毛の高さを70に固定（のばしていた画像を一定の大きさに固定する事によって抜けたように見せる）
     if(self.hairImageView.frame.origin.y <=100 || nuitaFlg == 1){
-//        [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5,
-//                                                self.hairImageView.frame.origin.y,
-//                                                self.hairImageView.frame.size.width,
-//                                                100)];
+        [self.hairImageView setFrame:CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
+                                                self.hairImageView.frame.origin.y,
+                                                self.hairImageView.frame.size.width,
+                                                100)];
         NSLog(@"100以下だよ");
         nuitaFlg = 1;
         
@@ -204,11 +208,11 @@
         if(nuitaFlg == 1){
             if (umiheiFlg == YES) {                      //脱毛コンボ発動！脱毛を計算＆アニメが終わっていなければ実行
                 if(umiheiDidEndFlg == NO){                  //海平を計算＆アニメが終わっていなければ実行
-                    
+
                     NSLog(@"海平コンボ発動！！ポイント２倍");
                     unplugedNumber *= 2;                     //ポイントを２倍！
                     umiheiDidEndFlg = YES;                    //計算＆アニメーション終了
-                    
+
                     //アニメーション
                     [self.umiheiComboImageView setHidden:NO];
                     [self.umiheiComboImageView setAlpha:1];
@@ -216,7 +220,7 @@
                     [UIView setAnimationDuration:3.0];
                     [self.umiheiComboImageView setAlpha:0];
                     [UIView commitAnimations];
-                    
+
                     //ラベルに表示
                     //max9999999999
                     if(unplugedNumber > MAXHAIR){
@@ -224,7 +228,7 @@
                     }
                     self.unplugLabel.text = [NSString stringWithFormat:@"%d本抜き",unplugedNumber];
                     self.unplugLabel.textColor = [UIColor redColor];
-                    
+
                     //バイブレーション発生
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                     //海平コンボ音再生
@@ -232,6 +236,7 @@
                 }
             }else{
                 if(namiheiDidEndFlg == NO){
+                    
                     namiheiDidEndFlg = YES;
                     //通常時の計算＋ラベル表示＋音再生
                     unplugedNumber++;                        //抜いた本数を加算
@@ -239,14 +244,12 @@
                     if(unplugedNumber > MAXHAIR){
                         unplugedNumber = MAXHAIR;
                     }
-                    
+
                     //抜いた音再生
                     [self playSound:@"miss"];
-                    
-                    //ラベルに表示
-                    self.unplugLabel.text = [NSString stringWithFormat:@"%d本抜き",unplugedNumber];
-                    self.unplugLabel.textColor = [UIColor blackColor];
+
                 }
+
             }
         }
     }
@@ -369,7 +372,13 @@
 
 //タッチイベント終了時の処理
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    //ラベルに表示
+    //touchMovedで更新するとなぜか毛がずれるバグがあるのでここでやってる
+    self.unplugLabel.text = [NSString stringWithFormat:@"%d本抜き",unplugedNumber];
+    self.unplugLabel.textColor = [UIColor blackColor];
+
+    
     
     //指を非表示
     self.fingerImageView.hidden = YES;
@@ -399,13 +408,13 @@
             }
             
             //アニメーション ニョキッと生えてきます
-            [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5 ,
+            [self.hairImageView setFrame:CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
                                                     self.namihei.frame.origin.y + 20,
                                                     25,
                                                     10)];
             [UIView beginAnimations:nil context:nil];
             [UIView setAnimationDuration:0.4];
-            [self.hairImageView setFrame:CGRectMake(screenSize.width * 0.5,
+            [self.hairImageView setFrame:CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
                                                     self.namihei.frame.origin.y - 30,
                                                     25,
                                                     60)];
@@ -418,7 +427,7 @@
                 isAnimating = YES; // 二重実行を防ぐためにフラグを立てる。
                 
                 //アニメーション 上下にふわふわ動きます。
-                [self.hairImageView setFrame:CGRectMake(self.hairImageView.frame.origin.x,
+                [self.hairImageView setFrame:CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
                                                         self.namihei.frame.origin.y - 30,
                                                         self.hairImageView.frame.size.width,
                                                         50)];
@@ -427,14 +436,14 @@
                 [UIView setAnimationDuration:0.07];
                 [UIView setAnimationRepeatCount:4];
                 [UIView setAnimationRepeatAutoreverses:YES];
-                [self.hairImageView setFrame:CGRectMake(self.hairImageView.frame.origin.x,
+                [self.hairImageView setFrame:CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
                                                         self.namihei.frame.origin.y - 30 - 20,
                                                         self.hairImageView.frame.size.width,
                                                         70)];
                 [UIView commitAnimations];
             }else{
                 //髪の初期位置
-                self.hairImageView.frame = CGRectMake(self.hairImageView.frame.origin.x,
+                self.hairImageView.frame = CGRectMake((screenSize.width * 0.5) - (self.hairImageView.frame.size.width * 0.5),
                                                       self.namihei.frame.origin.y - 30,
                                                       self.hairImageView.frame.size.width,
                                                       50);

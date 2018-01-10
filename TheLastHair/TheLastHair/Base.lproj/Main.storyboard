@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -153,26 +158,26 @@
                                     <constraint firstAttribute="height" constant="109" id="qF7-Ry-sVW"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-ur-hhI">
-                                <rect key="frame" x="20" y="80" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="mou-mt-4ww"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="umiheicombo" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-Rk-897">
                                 <rect key="frame" x="50" y="334" width="314" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="finger" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-cA-A6B">
-                                <rect key="frame" x="137" y="46" width="298" height="180"/>
+                                <rect key="frame" x="55" y="40" width="306" height="174"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="298" id="Dd5-qd-XKt"/>
-                                    <constraint firstAttribute="height" constant="180" id="htN-XG-P9z"/>
+                                    <constraint firstAttribute="width" constant="306" id="Nqj-Jg-Xn1"/>
+                                    <constraint firstAttribute="height" constant="174" id="e3o-Zl-XaS"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-ur-hhI">
+                                <rect key="frame" x="20" y="80" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mou-mt-4ww"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.51040123049999997" green="0.95996523239999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -197,6 +202,7 @@
                         <outlet property="highScoreLabel" destination="O6d-Ti-SRg" id="0Vj-wD-sgn"/>
                         <outlet property="namihei" destination="j4u-dd-UxY" id="UWm-TV-KxN"/>
                         <outlet property="nowScoreLabel" destination="KVU-me-SBY" id="uUO-yi-Dna"/>
+                        <outlet property="umiheiComboImageView" destination="aD5-Rk-897" id="XoM-YC-QIf"/>
                         <outlet property="unplugLabel" destination="FvN-ur-hhI" id="1ch-Q5-ZAO"/>
                     </connections>
                 </viewController>
@@ -207,7 +213,7 @@
     </scenes>
     <resources>
         <image name="endbutton" width="48" height="18"/>
-        <image name="finger" width="132" height="120"/>
+        <image name="finger" width="204" height="116"/>
         <image name="hair" width="16" height="66"/>
         <image name="namiheiHead4inch" width="184" height="227"/>
         <image name="rankbutton" width="142" height="35"/>

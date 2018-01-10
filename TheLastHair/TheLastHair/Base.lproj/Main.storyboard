@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,11 +21,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ze9-ba-Ff0" customClass="GADBannerView">
-                                <rect key="frame" x="47" y="20" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="OoM-7k-VUp"/>
@@ -34,13 +34,13 @@
                                 <viewLayoutGuide key="safeArea" id="ODn-xs-C6F"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-nr-P0I">
-                                <rect key="frame" x="7" y="163" width="400.66666666666669" height="87.333333333333314"/>
+                                <rect key="frame" x="7" y="163" width="306.5" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aKK-nr-P0I" secondAttribute="height" multiplier="307:67" id="dyO-aR-trD"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVq-JP-FCJ" customClass="GADBannerView">
-                                <rect key="frame" x="47" y="686" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="75g-5C-s6E"/>
@@ -48,7 +48,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-8S-1t9">
-                                <rect key="frame" x="86.666666666666686" y="329.33333333333331" width="241" height="73.666666666666686"/>
+                                <rect key="frame" x="86.5" y="309" width="147" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fBf-8S-1t9" secondAttribute="height" multiplier="49:15" id="67n-Xw-yGz"/>
                                 </constraints>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-Jp-sf2">
-                                <rect key="frame" x="53" y="412" width="308" height="75"/>
+                                <rect key="frame" x="53" y="363" width="214" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eYf-Jp-sf2" secondAttribute="height" multiplier="107:26" id="Jy4-4a-vaw"/>
                                 </constraints>
@@ -103,44 +103,68 @@
             <objects>
                 <viewController id="Fi7-1u-LKv" customClass="GameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7xA-V1-rRN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="namiheiHead4inch" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-dd-UxY" customClass="Ga">
-                                <rect key="frame" x="22" y="280" width="371" height="456"/>
+                                <rect key="frame" x="22" y="227.5" width="277" height="340.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="j4u-dd-UxY" secondAttribute="height" multiplier="277:341" id="9zr-ot-BoA"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hair" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-Bh-5bq">
-                                <rect key="frame" x="200" y="234" width="16" height="66"/>
+                                <rect key="frame" x="148" y="147.5" width="25" height="100"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-zW-S2P" userLabel="ゲームオーバー">
-                                <rect key="frame" x="47" y="627" width="320" height="109"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="umiheicombo" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-Rk-897">
+                                <rect key="frame" x="3" y="250" width="314" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="finger" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-cA-A6B">
+                                <rect key="frame" x="35" y="39" width="306" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="306" id="Nqj-Jg-Xn1"/>
+                                    <constraint firstAttribute="height" constant="174" id="e3o-Zl-XaS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-ur-hhI">
+                                <rect key="frame" x="20" y="80" width="280" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mou-mt-4ww"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="iaG-Mg-NYe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-zW-S2P" userLabel="ゲームオーバー">
+                                <rect key="frame" x="0.0" y="253" width="320" height="134"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="ハイスコア：0本抜き" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6d-Ti-SRg">
-                                        <rect key="frame" x="10" y="0.0" width="295" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="2" height="1"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="今のハイス：0本抜き" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVU-me-SBY">
-                                        <rect key="frame" x="10" y="32" width="295" height="40"/>
+                                        <rect key="frame" x="0.0" y="32" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="2" height="1"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-XX-lwb">
-                                        <rect key="frame" x="124" y="74" width="72" height="27"/>
+                                        <rect key="frame" x="96" y="79" width="129" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" image="endbutton">
+                                        <state key="normal" backgroundImage="endbutton">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -154,30 +178,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.52946192781690138" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="pg3-UH-kV3"/>
-                                    <constraint firstAttribute="height" constant="109" id="qF7-Ry-sVW"/>
+                                    <constraint firstAttribute="height" constant="134" id="n2v-sF-qtM"/>
+                                    <constraint firstAttribute="width" constant="320" id="waG-lF-4J5"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="umiheicombo" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-Rk-897">
-                                <rect key="frame" x="50" y="334" width="314" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bakamon" translatesAutoresizingMaskIntoConstraints="NO" id="WZf-jC-Ex7">
+                                <rect key="frame" x="130" y="397" width="61" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="finger" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-cA-A6B">
-                                <rect key="frame" x="55" y="40" width="306" height="174"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="306" id="Nqj-Jg-Xn1"/>
-                                    <constraint firstAttribute="height" constant="174" id="e3o-Zl-XaS"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-ur-hhI">
-                                <rect key="frame" x="20" y="80" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="mou-mt-4ww"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.51040123049999997" green="0.95996523239999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -189,18 +197,20 @@
                             <constraint firstItem="RmE-yS-Myh" firstAttribute="trailing" secondItem="FvN-ur-hhI" secondAttribute="trailing" constant="20" id="IkV-Bd-EVM"/>
                             <constraint firstItem="FvN-ur-hhI" firstAttribute="top" secondItem="RmE-yS-Myh" secondAttribute="top" constant="60" id="Unt-aJ-2Si"/>
                             <constraint firstItem="j4u-dd-UxY" firstAttribute="bottom" secondItem="RmE-yS-Myh" secondAttribute="bottom" id="d3O-LP-Vbt"/>
-                            <constraint firstItem="1dB-zW-S2P" firstAttribute="bottom" secondItem="RmE-yS-Myh" secondAttribute="bottom" id="lZK-J0-Oh6"/>
+                            <constraint firstItem="1dB-zW-S2P" firstAttribute="bottom" secondItem="RmE-yS-Myh" secondAttribute="bottom" constant="-181" id="lZK-J0-Oh6"/>
                             <constraint firstItem="m8a-Bh-5bq" firstAttribute="centerX" secondItem="j4u-dd-UxY" secondAttribute="centerX" id="peF-Eg-o2D"/>
                             <constraint firstItem="j4u-dd-UxY" firstAttribute="top" secondItem="m8a-Bh-5bq" secondAttribute="bottom" constant="-20" id="vs0-ce-8KI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RmE-yS-Myh"/>
                     </view>
                     <connections>
+                        <outlet property="bakamonImageView" destination="WZf-jC-Ex7" id="OV4-RB-gCS"/>
                         <outlet property="fingerImageView" destination="wV5-cA-A6B" id="G5n-Yb-xEg"/>
                         <outlet property="gameOverView" destination="1dB-zW-S2P" id="Sme-xy-Bqh"/>
                         <outlet property="hairImageView" destination="m8a-Bh-5bq" id="3JY-d4-E8K"/>
                         <outlet property="highScoreLabel" destination="O6d-Ti-SRg" id="0Vj-wD-sgn"/>
                         <outlet property="namihei" destination="j4u-dd-UxY" id="UWm-TV-KxN"/>
+                        <outlet property="namiheiFaceImageView" destination="iaG-Mg-NYe" id="Bkk-TP-mBG"/>
                         <outlet property="nowScoreLabel" destination="KVU-me-SBY" id="uUO-yi-Dna"/>
                         <outlet property="umiheiComboImageView" destination="aD5-Rk-897" id="XoM-YC-QIf"/>
                         <outlet property="unplugLabel" destination="FvN-ur-hhI" id="1ch-Q5-ZAO"/>
@@ -208,17 +218,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kn-Rn-4Fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="827.536231884058" y="19.565217391304348"/>
+            <point key="canvasLocation" x="825" y="17.95774647887324"/>
         </scene>
     </scenes>
     <resources>
-        <image name="endbutton" width="48" height="18"/>
-        <image name="finger" width="204" height="116"/>
-        <image name="hair" width="16" height="66"/>
-        <image name="namiheiHead4inch" width="184" height="227"/>
-        <image name="rankbutton" width="142" height="35"/>
-        <image name="startbutton" width="98" height="30"/>
-        <image name="title" width="204" height="45"/>
-        <image name="umiheicombo" width="209" height="45"/>
+        <image name="bakamon" width="309" height="62"/>
+        <image name="endbutton" width="72" height="27"/>
+        <image name="finger" width="306" height="175"/>
+        <image name="hair" width="25" height="100"/>
+        <image name="house" width="320" height="568"/>
+        <image name="namiheiHead4inch" width="277" height="341"/>
+        <image name="rankbutton" width="214" height="52"/>
+        <image name="startbutton" width="147" height="45"/>
+        <image name="title" width="307" height="67"/>
+        <image name="umiheicombo" width="314" height="68"/>
     </resources>
 </document>

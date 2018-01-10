@@ -56,6 +56,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *unplugLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *umiheiComboImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *namihei;
+@property (weak, nonatomic) IBOutlet UIImageView *namiheiFaceImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *bakamonImageView;
+
 
 @end
 
@@ -125,6 +128,84 @@
 
 -(void)gameover{
     NSLog(@"ゲームオーバー");
+    
+    //指を非表示
+    self.fingerImageView.hidden = YES;
+    
+    //今回の記録がハイスコアを超えたらuserdefaultで保存
+    if([score integerForKey:@"SCORE"] < unplugedNumber){
+        [score setInteger:unplugedNumber forKey:@"SCORE"];
+    }
+    
+    //前回値に１を足して保存。
+    [playCount setInteger:(playCountBefore+1) forKey:@"play"];
+    NSLog(@"プレイ回数：%d",[playCount integerForKey:@"play"]);
+    
+    //レビュー済みか確認
+    BOOL reviewflg = [playCount boolForKey:@"REVIEW"];
+    
+    NSLog(@"レビュー済み:%d",reviewflg);
+    
+    //プレイ回数50回毎にレビュー依頼
+    if([playCount integerForKey:@"play"]%REVIEW == 0 && reviewflg == NO){
+        //リジェクトなので廃止
+    }else{
+        //4回に１回インタースティシャル広告
+        if([playCount integerForKey:@"play"]%4 == 0){
+            NSTimer *tm = [NSTimer scheduledTimerWithTimeInterval:1.1f target:self selector:@selector(displayAdmob:) userInfo:nil repeats:NO];
+        }
+    }
+    
+    
+    //記録を表示
+    self.highScoreLabel.text = [NSString stringWithFormat:@"最高記録：%d本抜き",[score integerForKey:@"SCORE"]];
+    self.nowScoreLabel.text = [NSString stringWithFormat:@"今回記録：%d本抜き",unplugedNumber];
+    
+    
+    //ゲームオーバーフラグをたてる
+    gameoverFlg = 1;
+    
+    //毛を非表示
+    self.hairImageView.hidden = YES;
+    
+    //バイブレーション発生
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
+    //海平コンボ音再生
+    [self playSound:@"gameover"];
+    
+    //家を表示。頭を非表示。ばかもーんを表示
+    self.namiheiFaceImageView.hidden = NO;
+    self.namihei.hidden = YES;
+    self.bakamonImageView.hidden = NO;
+    
+    //ばかもんのアニメーション
+    self.bakamonImageView.frame  = CGRectMake(screenSize.width * 0.5,
+                                              600,
+                                              0,
+                                              0);
+    [UIView beginAnimations:nil context:nil];                   // 条件指定開始
+    [UIView setAnimationDuration:1.0];                          // 2秒かけてアニメーションを終了させる
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];   // アニメーションは一定速度
+    self.bakamonImageView.frame = CGRectMake(
+                                             (screenSize.width * 0.5) - 150,
+                                             100,
+                                             300,
+                                             60);            // 終了位置を200,400の位置に指定する
+    [UIView commitAnimations];                                  // アニメーション開始！
+
+    
+    
+    self.gameOverView.hidden = NO;
+
+    //スコア表示のアニメーション
+//    [UIView beginAnimations:nil context:nil];                   // 条件指定開始
+//    [UIView setAnimationDuration:1.0];                          // 2秒かけてアニメーションを終了させる
+//    [UIView setAnimationDelay:0.2];                             // 3秒後にアニメーションを開始する
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];   // アニメーションは一定速度
+//    self.gameOverView.center = CGPointMake(screenSize.width * 0.5 , screenSize.height * 0.5);
+//    [UIView commitAnimations];                                  // アニメーション開始！
+    
 }
 
 #pragma mark - タッチイベント
@@ -187,6 +268,7 @@
                                                   height);
         }
         //指の動き
+        self.fingerImageView.hidden = NO;
         self.fingerImageView.frame = CGRectMake((screenSize.width * 0.5) - (self.fingerImageView.frame.size.width * 0.5),
                                                 self.hairImageView.frame.origin.y - self.fingerImageView.frame.size.height + 20,
                                                 self.fingerImageView.frame.size.width,
@@ -247,9 +329,7 @@
 
                     //抜いた音再生
                     [self playSound:@"miss"];
-
                 }
-
             }
         }
     }
@@ -483,6 +563,10 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+
+-(void)displayAdmob:(NSTimer*)timer {
+    NSLog(@"Admob");
+}
 /*
  #pragma mark - Navigation
  

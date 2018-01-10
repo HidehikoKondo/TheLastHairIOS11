@@ -16,7 +16,6 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
 @interface ViewController ()<GADInterstitialDelegate>
 
 // 広告
-@property (weak, nonatomic) IBOutlet UIView *adView;
 @property(nonatomic, weak) IBOutlet GADBannerView *bannerView;
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView2;
 

@@ -10,13 +10,15 @@
 #import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+@import GoogleMobileAds;
+static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/9650414539";
 
 #define MAXHAIR     999999999  //最大値制限
 #define ANGRY       250         //怒られる確率
 #define COMBO       100         //海平コンボの確率
 #define REVIEW      50          //レビューしろアラートを表示するプレイ回数
 
-@interface GameViewController (){
+@interface GameViewController ()<GADInterstitialDelegate>{
     int nuitaFlg;           //髪の毛を抜いたかどうかの判定
     bool umiheiFlg;          //海平コンボ発動かどうかの判定
     bool umiheiDidEndFlg;    //海平コンボを表示＆計算したかどうかのフラグ
@@ -37,17 +39,6 @@
 
     
 }
-//@property (weak, nonatomic) IBOutlet UIImageView *hairImageView;
-//@property (weak, nonatomic) IBOutlet UILabel *unplugLabel;
-//@property (weak, nonatomic) IBOutlet UIImageView *umiheiComboImageView;
-//@property (weak, nonatomic) IBOutlet UIImageView *namiheiFaceImageView;
-//@property (weak, nonatomic) IBOutlet UIImageView *namiheiHeadImageView;
-//@property (weak, nonatomic) IBOutlet UIImageView *bakamonImageView;
-//@property (weak, nonatomic) IBOutlet UIView *gameOverView;
-//@property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *nowScoreLabel;
-//@property (weak, nonatomic) IBOutlet UIImageView *fingerImageView;
-
 @property (weak, nonatomic) IBOutlet UIImageView *fingerImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *hairImageView;
 @property (weak, nonatomic) IBOutlet UIView *gameOverView;
@@ -58,7 +49,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *namihei;
 @property (weak, nonatomic) IBOutlet UIImageView *namiheiFaceImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *bakamonImageView;
-
+@property(nonatomic, weak) IBOutlet GADBannerView *bannerView;
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView2;
 
 @end
 
@@ -67,9 +59,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
     
     screenSize = [[UIScreen mainScreen] bounds].size;
+
+    //バナー
+    if(screenSize.height != 480){
+        self.bannerView.adUnitID = kBannerAdUnitID;
+        self.bannerView.rootViewController = self;
+        [self.bannerView loadRequest:[GADRequest request]];
+    }
+    self.bannerView2.adUnitID = kBannerAdUnitID;
+    self.bannerView2.rootViewController = self;
+    [self.bannerView2 loadRequest:[GADRequest request]];
 
     //ゲームオーバー画面の角丸設定
     self.gameOverView.layer.cornerRadius = 10;
@@ -101,13 +102,6 @@
     //抜いた数を0クリア
     unplugedNumber = 0;
     self.unplugLabel.text = [NSString stringWithFormat:@"%d本抜き",unplugedNumber];
-    
-    //毛を１８０度回転
-    CGAffineTransform rotation = CGAffineTransformMakeRotation(-180.0f * (M_PI / 180.0f));
-    //[self.hairImageView setTransform:rotation];
-    
-    
-    
 }
 
 - (void)viewDidLayoutSubviews{

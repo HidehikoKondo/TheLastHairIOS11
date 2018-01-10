@@ -51,6 +51,7 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
 @property (weak, nonatomic) IBOutlet UIImageView *bakamonImageView;
 @property(nonatomic, weak) IBOutlet GADBannerView *bannerView;
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView2;
+@property(nonatomic, strong) GADInterstitial*interstitial;
 
 @end
 
@@ -72,6 +73,13 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
     self.bannerView2.rootViewController = self;
     [self.bannerView2 loadRequest:[GADRequest request]];
 
+    //インタースティシャル
+    //ca-app-pub-3324877759270339/8563045425
+    self.interstitial.delegate = self;
+    self.interstitial = [self createAndLoadInterstitial];
+
+    
+    
     //ゲームオーバー画面の角丸設定
     self.gameOverView.layer.cornerRadius = 10;
     
@@ -103,6 +111,15 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
     unplugedNumber = 0;
     self.unplugLabel.text = [NSString stringWithFormat:@"%d本抜き",unplugedNumber];
 }
+
+- (GADInterstitial *)createAndLoadInterstitial {
+    GADInterstitial *interstitial =
+    [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-3324877759270339/8563045425"];
+    interstitial.delegate = self;
+    [interstitial loadRequest:[GADRequest request]];
+    return interstitial;
+}
+
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -145,6 +162,7 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
         //リジェクトなので廃止
     }else{
         //4回に１回インタースティシャル広告
+        NSLog(@"%f",[playCount integerForKey:@"play"]%4 == 0);
         if([playCount integerForKey:@"play"]%4 == 0){
             NSTimer *tm = [NSTimer scheduledTimerWithTimeInterval:1.1f target:self selector:@selector(displayAdmob:) userInfo:nil repeats:NO];
         }
@@ -560,6 +578,12 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
 
 -(void)displayAdmob:(NSTimer*)timer {
     NSLog(@"Admob");
+    //インタースティシャル
+    if (self.interstitial.isReady) {
+        [self.interstitial presentFromRootViewController:self];
+    } else {
+        NSLog(@"Ad wasn't ready");
+    }
 }
 /*
  #pragma mark - Navigation
@@ -570,5 +594,38 @@ static NSString *const kBannerAdUnitID = @"ca-app-pub-3324877759270339/965041453
  // Pass the selected object to the new view controller.
  }
  */
+
+
+/// Tells the delegate an ad request succeeded.
+- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
+    NSLog(@"interstitialDidReceiveAd");
+}
+
+/// Tells the delegate an ad request failed.
+- (void)interstitial:(GADInterstitial *)ad
+didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"interstitial:didFailToReceiveAdWithError: %@", [error localizedDescription]);
+}
+
+/// Tells the delegate that an interstitial will be presented.
+- (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillPresentScreen");
+}
+
+/// Tells the delegate the interstitial is to be animated off the screen.
+- (void)interstitialWillDismissScreen:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillDismissScreen");
+}
+
+/// Tells the delegate the interstitial had been animated off the screen.
+- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
+    NSLog(@"interstitialDidDismissScreen");
+}
+
+/// Tells the delegate that a user click will open another app
+/// (such as the App Store), backgrounding the current app.
+- (void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillLeaveApplication");
+}
 
 @end
